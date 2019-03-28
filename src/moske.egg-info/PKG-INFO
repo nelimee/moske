@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: moske
+Version: 0.1.0
+Summary: MOdule SKEleton generator
+Home-page: UNKNOWN
+Author: Adrien Suau
+Author-email: adrien.suau@cerfacs.fr
+License: UNKNOWN
+Project-URL: Collaborator, https://cerfacs.fr/en
+Description: UNKNOWN
+Keywords: module,skeleton,generator
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: CeCILL-B Free Software License Agreement (CECILL-B)
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/x-rst
