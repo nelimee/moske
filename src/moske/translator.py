@@ -72,10 +72,11 @@ def translate_package(
         print(
             "Package '{}' could not be imported. Ending the generation.".format(pkgname)
         )
+        return
     # If we imported the package successfully, get its absolute path, i.e. the place
     # all the files on the package lies on.
     # TODO: what if there are multiple paths in __path__?
-    pkg_dir = pkg.__path__[0]
+    pkg_dir = list(pkg.__path__)[0]
     parent_pkg_dir = os.path.dirname(pkg_dir)
 
     # Explore recursively all the files in the package directory.
@@ -125,7 +126,6 @@ def translate_package(
                             "You asked for black formatting but Black is not "
                             "importable. Try to install it and re-launch moske."
                         )
-
                     python_code = black.format_str(
                         python_code,
                         mode=black.FileMode(

@@ -40,7 +40,7 @@ def func_repr(data):
                 "{name}{typehint}{default}".format(
                     name=p["name"],
                     typehint=(
-                        ": {type}".format(type=p["annotation"].__name__)
+                        ": {type}".format(type=p["annotation"])
                         if p["annotation"] is not None
                         else ""
                     ),
@@ -82,12 +82,12 @@ def class_repr(data):
 
 def module_repr(data):
 
-    sorted_classes_data = []
-    sorted_funcs_datas = []
-
-    satisfied_dependencies = set()
-    while data["classes"]:
-
+    # sorted_classes_data = []
+    # sorted_funcs_datas = []
+    #
+    # satisfied_dependencies = set()
+    # while data["classes"]:
+    #     pass
 
     return "\n".join(
         [class_repr(cls_data) for cls_data in data["classes"]]
