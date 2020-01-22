@@ -81,6 +81,14 @@ def class_repr(data):
 
 
 def module_repr(data):
+
+    sorted_classes_data = []
+    sorted_funcs_datas = []
+
+    satisfied_dependencies = set()
+    while data["classes"]:
+
+
     return "\n".join(
         [class_repr(cls_data) for cls_data in data["classes"]]
         + [func_repr(func_data) for func_data in data["func"]]

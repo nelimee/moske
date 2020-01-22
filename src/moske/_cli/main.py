@@ -31,7 +31,6 @@
 
 import os
 import argparse
-import logging
 
 from moske.translator import translate_package
 
@@ -53,8 +52,8 @@ def main():
         "-r",
         "--remove",
         help=(
-            "portions of code to remove from the original package. Default to [code, "
-            "docstring]. \nNote: the generated output will not include comments."
+            "portions of code to remove from the original package. "
+            "\nNote: the generated output will not include comments."
         ),
         choices=POSSIBLE_TO_DELETE,
         nargs="*",
@@ -74,12 +73,9 @@ def main():
         ),
         action="store_true",
     )
-    parser.add_argument(
-        "-g",
-        "--debug",
-        help="activate debug mode.",
-        action="store_false"
-    )
+    # parser.add_argument(
+    #     "-g", "--debug", help="activate debug mode.", action="store_false"
+    # )
     args = parser.parse_args()
 
     translate_package(

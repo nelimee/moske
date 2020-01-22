@@ -42,6 +42,7 @@ def extract_class_information(name: str, cls):
     data = dict()
     data["name"] = name
     data["parents"] = cls.__bases__
+    data["dependson"] = {c.__name__ for c in cls.__bases__}
     data["routines"] = [
         _extract_func_information(routname, rout)
         for routname, rout in inspect.getmembers(cls, predicate=inspect.isroutine)

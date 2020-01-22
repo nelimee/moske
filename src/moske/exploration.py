@@ -1,6 +1,7 @@
 # ======================================================================
-# Copyright CERFACS (March 2019)
-# Contributor: Adrien Suau (adrien.suau@cerfacs.fr)
+# Copyright CERFACS / LIRMM (01/2020)
+# Contributor: Adrien Suau (<adrien.suau@cerfacs.fr>
+#                           <adrien.suau@lirmm.fr>)
 #
 # This software is governed by the CeCILL-B license under French law and
 # abiding  by the  rules of  distribution of free software. You can use,
@@ -29,6 +30,10 @@
 # knowledge of the CeCILL-B license and that you accept its terms.
 # ======================================================================
 
-from pkgutil import extend_path
+import inspect
+import types
+import typing as ty
 
-__path__ = extend_path(__path__, __name__)
+
+def get_functions(module: types.ModuleType) -> ty.List[str]:
+    pass

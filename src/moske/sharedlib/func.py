@@ -52,14 +52,18 @@ def extract_func_information(name: str, func) -> dict:
         )
         return data
     data["parameters"] = list()
+    data["dependson"] = set()
     for name, parameter in signature.parameters.items():
+        annotation = _empty_or_none(inspect.Parameter, parameter.annotation)
         data["parameters"].append(
             {
                 "name": parameter.name,
                 "default": _empty_or_none(inspect.Parameter, parameter.default),
-                "annotation": _empty_or_none(inspect.Parameter, parameter.annotation),
+                "annotation": annotation,
             }
         )
+        if annotation is not None:
+            data["dependson"].add(annotation)
     data["return_annotation"] = _empty_or_none(
         inspect.Signature, signature.return_annotation
     )
